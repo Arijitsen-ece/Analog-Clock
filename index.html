@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Analog Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="clock-container">
+    <div class="clock">
+      <div class="center-dot"></div>
+
+      <!-- Clock hands -->
+      <div class="hand hour" id="hour"></div>
+      <div class="hand minute" id="minute"></div>
+      <div class="hand second" id="second"></div>
+
+      <!-- Hour numbers -->
+      <div class="numbers">
+        <span style="--i:1">1</span>
+        <span style="--i:2">2</span>
+        <span style="--i:3">3</span>
+        <span style="--i:4">4</span>
+        <span style="--i:5">5</span>
+        <span style="--i:6">6</span>
+        <span style="--i:7">7</span>
+        <span style="--i:8">8</span>
+        <span style="--i:9">9</span>
+        <span style="--i:10">10</span>
+        <span style="--i:11">11</span>
+        <span style="--i:12">12</span>
+      </div>
+
+      <!-- Tick marks -->
+      <div class="ticks">
+        <!-- 60 marks -->
+        <script>
+          for (let i = 1; i <= 60; i++) {
+            document.write(`<span style="--i:${i}"></span>`);
+          }
+        </script>
+      </div>
+    </div>
+
+    <footer>
+      <p id="timezone"></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

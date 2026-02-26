@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #55d438, #073481);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, #ffffff, #986f6f);
+  border: 10px solid #00b737;
+  border-radius: 50%;
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgb(67, 149, 67);
+}
+
+/* Center dot */
+.center-dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #d20000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Hour numbers */
+.numbers span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc(30deg * var(--i))) translateY(-165px) rotate(calc(-30deg * var(--i)));
+  font-weight: 600;
+  color: #000000;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+/* Tick marks */
+.ticks span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 15px;
+  background: #0041a2;
+  transform: rotate(calc(6deg * var(--i))) translateY(-190px);
+  transform-origin: center;
+  opacity: 0.6;
+}
+.ticks span:nth-child(5n) {
+  height: 25px;
+  width: 4px;
+  opacity: 1;
+}
+
+/* Hands */
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translate(-50%, -100%) rotate(0deg);
+  border-radius: 6px;
+}
+
+.hand.hour {
+  width: 8px;
+  height: 90px;
+  background: #8dc000;
+  z-index: 3;
+}
+
+.hand.minute {
+  width: 6px;
+  height: 130px;
+  background: #0041a1;
+  z-index: 2;
+}
+
+.hand.second {
+  width: 2px;
+  height: 160px;
+  background: #bf2424;
+  z-index: 4;
+}
+
+/* Footer Timezone */
+footer {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  color: #000000;
+  background: rgba(160, 163, 148, 0.568);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(140, 128, 22, 0.904);
+}
